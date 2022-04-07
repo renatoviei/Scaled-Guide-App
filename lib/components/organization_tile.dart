@@ -28,7 +28,6 @@ class OrganizationTile extends StatelessWidget {
         ),
       ),
       subtitle: Text(organization.description),
-      onTap: () {},
       trailing: SizedBox(
         width: 100,
         child: Row(
