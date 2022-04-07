@@ -1,5 +1,5 @@
 # Scaled-Guide-App
-<h2>Aplicativo para orientar a escolha do método ágil a ser escalonado e/ou adaptado nas organizações usando Flutter e Firebase<h2>
+<h2>Aplicativo para orientar a escolha do método ágil a ser escalonado e/ou adaptado nas organizações usando Flutter e Firebase</h2>
  
 Dada a realidade dos desafios e fatores de sucesso existentes na adoção e adaptação de métodos ágeis em larga escala, será desenvolvido um aplicativo em Flutter para orientar a escolha do método a ser escalonado e/ou adaptado a partir de entradas de determinadas informações necessárias a respeito da realidade diversa das organizações e partes interessadas, ajudando-os em sua tomada de decisão.
   
