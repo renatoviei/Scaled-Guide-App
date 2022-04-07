@@ -9,7 +9,7 @@ Foram implementados os seguintes tópicos:
 * Criação de back-end usando Firebase;
 * Desenvolvimento de operações de gerenciamento de organizações dentro do app (Cadastro, leitura, atualização e remoção de organizações de um sistema);
 * Criação de listas, componentes, rotas, regras de negócio (Dart) em Flutter, ultilizando o Android Studio.
-* Toda documentação com informações adicionais sobre o projeto e suas telas se encontra na pasta 'Docs'.
+* Toda documentação com informações adicionais sobre o projeto e suas telas (widget trees) se encontram na pasta 'Docs'.
 
 <h2>Para executar o projeto Flutter</h2>
 
