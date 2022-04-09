@@ -9,7 +9,7 @@ class SimulatorList {
       children: [
         const Padding(
           padding: EdgeInsets.all(15.0),
-          child: Text("Which organization do you want to simulate the Agile Method?",
+          child: Text("Which organization do you want to simulate the Agile Framework?",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,

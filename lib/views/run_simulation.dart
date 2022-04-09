@@ -203,8 +203,19 @@ class _FormState extends State<RunSimulationForm> {
                   showDialog(
                     context: context,
                     builder: (cxt) => AlertDialog(
-                      title:  const Text('Done'),
-                      content: Text('The suggested agile method at scale for you to use in your organization is the ' + method + '!'),
+                      title: const Text(
+                        'Done',
+                        style: TextStyle(
+                          color: Colors.orange,
+                        ),
+                      ),
+                      content: Text(
+                        'The suggested Agile Framework at scale for you to use in your organization is the ' +
+                            method +
+                            '!\n\n' +
+                            'To know more information about Frameworks, see "Frameworks" tab.',
+                        textAlign: TextAlign.justify,
+                      ),
                       actions: <Widget>[
                         TextButton(
                           child: const Text('Ok'),

@@ -40,7 +40,7 @@ class _TabBarMainState extends State<TabBarMain> {
                 tabs: const [
                   Text("Organizations"),
                   Text("Simulator"),
-                  Text("Agile Methods"),
+                  Text("Frameworks"),
                 ],
                 onTap: _onTabTapped,
               )),

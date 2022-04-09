@@ -9,7 +9,7 @@ class MethodsList {
       children: [
         const Padding(
           padding: EdgeInsets.all(15.0),
-          child: Text("Scaled Agile Frameworks and Adaptations",
+          child: Text("Scaled Agile Frameworks",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,

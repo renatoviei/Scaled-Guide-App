@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/Method.dart';
+import '../routes/app_routes.dart';
+import '../views/detail_method.dart';
 
 class MethodsTile extends StatelessWidget {
   final Method method;
@@ -20,7 +22,15 @@ class MethodsTile extends StatelessWidget {
         ),
       ),
       subtitle: Text(method.shortDescription),
-      onTap: () {},
+      onTap: () {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailMethod(method),
+          ),
+          ModalRoute.withName(AppRoutes.HOME),
+        );
+      },
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ScaledGuideApp/views/detail_method.dart';
 import 'package:ScaledGuideApp/views/run_simulation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.ORGANIZATION_FORM: (_) => OrganizationForm(),
           AppRoutes.ORGANIZATION_EDIT_FORM: (_) => OrganizationEditForm(null),
           AppRoutes.RUN_SIMULATION: (_) => RunSimulationForm(null),
+          AppRoutes.DETAIL_METHOD: (_) => DetailMethod(null),
         },
       ),
     );

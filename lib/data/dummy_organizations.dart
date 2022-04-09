@@ -19,7 +19,7 @@ const DUMMY_ORGANIZATIONS = {
       cnpj: '38.828.123/4567-80',
       description: 'Consultoria',
       sector: 'IT',
-      avatarUrl: 'https://www.take.net/files/themes/blank_theme/assets/img/take-og-image.png',
+      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbWkVM4Of1-StTTAqIy4SiYoeOAtu-LVwjZw&usqp=CAU',
       method: 'LeSS',
       hasExperienceWithAgile: true
   ),
@@ -30,7 +30,7 @@ const DUMMY_ORGANIZATIONS = {
       cnpj: '38.789.358/5555-80',
       description: 'Consultoria',
       sector: 'IT',
-      avatarUrl: 'https://www.take.net/files/themes/blank_theme/assets/img/take-og-image.png',
+      avatarUrl: 'https://www.nikhil.eu/thoughtworks.jpeg',
       method: 'DAD',
       hasExperienceWithAgile: true
   ),
@@ -41,7 +41,7 @@ const DUMMY_ORGANIZATIONS = {
       cnpj: '55.423.358/5551-80',
       description: 'Consultoria',
       sector: 'IT',
-      avatarUrl: 'https://www.take.net/files/themes/blank_theme/assets/img/take-og-image.png',
+      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VTF_hrxUnJ0c9XfEpwmG3zkhGwk5CPXRTw&usqp=CAU',
       method: 'Not Simulated',
       hasExperienceWithAgile: true
   ),
