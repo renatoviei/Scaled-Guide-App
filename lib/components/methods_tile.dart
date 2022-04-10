@@ -28,7 +28,7 @@ class MethodsTile extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => DetailMethod(method),
           ),
-          ModalRoute.withName(AppRoutes.HOME),
+          ModalRoute.withName(AppRoutes.HOME_TAB),
         );
       },
     );

@@ -39,7 +39,7 @@ class SimulatorTile extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => RunSimulationForm(organization),
           ),
-          ModalRoute.withName(AppRoutes.HOME),
+          ModalRoute.withName(AppRoutes.HOME_TAB),
         );
       },
     );

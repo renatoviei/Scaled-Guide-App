@@ -39,7 +39,7 @@ class OrganizationTile extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => OrganizationEditForm(organization),
                   ),
-                  ModalRoute.withName(AppRoutes.HOME),
+                  ModalRoute.withName(AppRoutes.HOME_TAB),
                 );
               },
               icon: const Icon(Icons.edit),

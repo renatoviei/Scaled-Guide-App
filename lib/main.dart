@@ -1,4 +1,5 @@
 import 'package:ScaledGuideApp/views/detail_method.dart';
+import 'package:ScaledGuideApp/views/login_screen.dart';
 import 'package:ScaledGuideApp/views/run_simulation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: {
-          AppRoutes.HOME: (_) => TabBarMain(),
+          AppRoutes.HOME: (_) => myLogin(),
+          AppRoutes.HOME_TAB: (_) => TabBarMain(),
           AppRoutes.ORGANIZATION_FORM: (_) => OrganizationForm(),
           AppRoutes.ORGANIZATION_EDIT_FORM: (_) => OrganizationEditForm(null),
           AppRoutes.RUN_SIMULATION: (_) => RunSimulationForm(null),

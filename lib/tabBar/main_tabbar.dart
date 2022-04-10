@@ -21,31 +21,29 @@ class _TabBarMainState extends State<TabBarMain> {
     final Organizations organizations = Provider.of(context);
     final Methods methods = Provider.of(context);
 
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          body: TabBarView(
-            children: [
-              OrganizationsList().buildListOrganizations(organizations),
-              SimulatorList().buildListSimulator(organizations),
-              MethodsList().buildListAgileMethods(methods),
-            ],
-          ),
-          appBar: AppBar(
-              title: const Text('Scaled Guide'),
-              centerTitle: true,
-              bottom: TabBar(
-                labelPadding: const EdgeInsets.symmetric(vertical: 15.0),
-                tabs: const [
-                  Text("Organizations"),
-                  Text("Simulator"),
-                  Text("Frameworks"),
-                ],
-                onTap: _onTabTapped,
-              )),
-          bottomSheet: _bottomSheetSwitch(index),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        body: TabBarView(
+          children: [
+            OrganizationsList().buildListOrganizations(organizations),
+            SimulatorList().buildListSimulator(organizations),
+            MethodsList().buildListAgileMethods(methods),
+          ],
         ),
+        appBar: AppBar(
+            title: const Text('Scaled Guide'),
+            centerTitle: true,
+            bottom: TabBar(
+              labelPadding: const EdgeInsets.symmetric(vertical: 15.0),
+              tabs: const [
+                Text("Organizations"),
+                Text("Simulator"),
+                Text("Frameworks"),
+              ],
+              onTap: _onTabTapped,
+            )),
+        bottomSheet: _bottomSheetSwitch(index),
       ),
     );
   }
