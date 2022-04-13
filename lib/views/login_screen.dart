@@ -22,6 +22,7 @@ class _myLoginState extends State<myLogin> {
           appBar: AppBar(
             title: const Text('Scaled Guide'),
             centerTitle: true,
+            backgroundColor: Colors.lightBlue[900],
             leading: IconButton(
               onPressed: () {
                 showDialog(
@@ -48,25 +49,37 @@ class _myLoginState extends State<myLogin> {
               icon: Icon(Icons.logout),
             ),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.grey[50],
           body: SingleChildScrollView(
             child: Stack(
               children: [
                 Container(
                   height: 260.0,
-
                   alignment: Alignment.center,
                   padding: EdgeInsets.only(top: 15),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(40.0),
-                    child: Image.asset(
-                      'assets/logo.png',
-                      width: 180.0,
-                      height: 180.0,
-                      fit: BoxFit.fill,
+                  child: Container(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/logo.png',
+                        width: 220.0,
+                        height: 220.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      //Here goes the same radius, u can put into a var or function
+                      borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(250)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x54000000),
+                          spreadRadius:2,
+                          blurRadius: 13,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -76,14 +89,15 @@ class _myLoginState extends State<myLogin> {
                     Container(
                       margin: const EdgeInsets.only(bottom: 50.0),
                       padding: EdgeInsets.only(
-                        top: 250.0,
+                        top: 265.0,
                       ),
                       child: Text(
                         'Sing in',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.blue,
-                          fontSize: 26.0,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -143,8 +157,8 @@ class _myLoginState extends State<myLogin> {
                             children: [
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    maximumSize: Size(120.0, 60.0),
-                                    minimumSize: Size(120.0, 60.0),
+                                    maximumSize: Size(150.0, 60.0),
+                                    minimumSize: Size(150.0, 60.0),
                                     primary: Colors.orange,
                                     shape: StadiumBorder(),
                                   ),
@@ -175,10 +189,10 @@ class _myLoginState extends State<myLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'register');
+                                  Navigator.of(context).pushNamed(AppRoutes.CREATE_ACCOUNT);
                                 },
                                 child: Text(
-                                  'Register',
+                                  'Create an account',
                                   style: TextStyle(color: Colors.blue),
                                 ),
                               ),

@@ -17,6 +17,7 @@ class _DetailMethodState extends State<DetailMethod> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue[900],
         title: const Text(
           'Scaled Guide',
         ),

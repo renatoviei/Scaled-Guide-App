@@ -45,6 +45,7 @@ class _FormState extends State<RunSimulationForm> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue[900],
         title: const Text(
           'Scaled Guide',
         ),
@@ -55,7 +56,7 @@ class _FormState extends State<RunSimulationForm> {
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              "Run Agile Method simulation for your organization?",
+              "Run Agile Framework simulation for your organization?",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,
@@ -151,7 +152,7 @@ class _FormState extends State<RunSimulationForm> {
                       TextFormField(
                         initialValue: _formData['method'],
                         decoration: const InputDecoration(
-                            labelText: 'Agile Method in use'),
+                            labelText: 'Agile Framework/Method in use'),
                         showCursor: true,
                         enabled: false,
                       ),
@@ -181,10 +182,10 @@ class _FormState extends State<RunSimulationForm> {
                   backgroundColor: Colors.orange,
                   primary: Colors.white,
                 ),
-                onPressed: () {
+                onPressed: () async {
                   _form.currentState!.save();
 
-                  method = 'Scrum';
+                  method = 'Scrum-at-Scale';
 
                   Provider.of<Organizations>(context, listen: false).put(
                     Organization(
@@ -200,11 +201,12 @@ class _FormState extends State<RunSimulationForm> {
                     ),
                   );
 
-                  showDialog(
+                  await showDialog(
                     context: context,
                     builder: (cxt) => AlertDialog(
+                      backgroundColor: Colors.grey[50],
                       title: const Text(
-                        'Done',
+                        'Done!',
                         style: TextStyle(
                           color: Colors.orange,
                         ),
@@ -231,7 +233,8 @@ class _FormState extends State<RunSimulationForm> {
                 },
                 child: const Text('Run'),
               ),
-            ]),
+            ],
+        ),
       ),
     );
   }

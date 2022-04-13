@@ -32,6 +32,7 @@ class _TabBarMainState extends State<TabBarMain> {
           ],
         ),
         appBar: AppBar(
+            backgroundColor: Colors.lightBlue[900],
             title: const Text('Scaled Guide'),
             centerTitle: true,
             bottom: TabBar(

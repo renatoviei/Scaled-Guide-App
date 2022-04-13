@@ -19,6 +19,7 @@ class _FormState extends State<OrganizationForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue[900],
         title: const Text('Scaled Guide'),
         centerTitle: true,
       ),
@@ -140,7 +141,7 @@ class _FormState extends State<OrganizationForm> {
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
-                            labelText: 'Any Agile Method in use?'),
+                            labelText: 'Any Agile Framework/Method in use?'),
                         onSaved: (value) => _formData['method'] = value!,
                       ),
                       CheckboxListTile(

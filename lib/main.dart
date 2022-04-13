@@ -1,3 +1,4 @@
+import 'package:ScaledGuideApp/views/create_account_form.dart';
 import 'package:ScaledGuideApp/views/detail_method.dart';
 import 'package:ScaledGuideApp/views/login_screen.dart';
 import 'package:ScaledGuideApp/views/run_simulation.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           AppRoutes.HOME: (_) => myLogin(),
+          AppRoutes.CREATE_ACCOUNT: (_) => accountForm(),
           AppRoutes.HOME_TAB: (_) => TabBarMain(),
           AppRoutes.ORGANIZATION_FORM: (_) => OrganizationForm(),
           AppRoutes.ORGANIZATION_EDIT_FORM: (_) => OrganizationEditForm(null),

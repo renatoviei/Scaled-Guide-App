@@ -45,6 +45,7 @@ class _FormState extends State<OrganizationEditForm> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue[900],
         title: const Text(
           'Scaled Guide',
         ),
@@ -174,7 +175,7 @@ class _FormState extends State<OrganizationEditForm> {
                       TextFormField(
                         initialValue: _formData['method'],
                         decoration: const InputDecoration(
-                            labelText: 'Any Agile Method in use?'),
+                            labelText: 'Any Agile Framework/Method in use?'),
                         onSaved: (value) => _formData['method'] = value!,
                       ),
                       CheckboxListTile(
