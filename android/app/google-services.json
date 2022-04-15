@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529087862210",
+    "project_id": "scaled-guide-app",
+    "storage_bucket": "scaled-guide-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529087862210:android:3d9e933344d5733417325b",
+        "android_client_info": {
+          "package_name": "com.example.ScaledGuideApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529087862210-fs5j33kf02hnu46i0s3oanog6akf2qe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWrXUcBIXraq8EFOM2nwEU5L_StLROK1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529087862210-fs5j33kf02hnu46i0s3oanog6akf2qe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -12,6 +12,7 @@ class MethodsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.only(left: 15.0, right: 15.0, top:6.0 ,bottom: 2.0),
       title: Text(
         method.name,
         style: const TextStyle(
@@ -21,7 +22,10 @@ class MethodsTile extends StatelessWidget {
           fontFamily: 'Lato',
         ),
       ),
-      subtitle: Text(method.shortDescription),
+      subtitle: Text(
+        method.shortDescription,
+        textAlign: TextAlign.justify,
+      ),
       onTap: () {
         Navigator.pushAndRemoveUntil(
           context,

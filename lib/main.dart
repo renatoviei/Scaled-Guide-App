@@ -1,7 +1,11 @@
+import 'package:ScaledGuideApp/models/UserApp.dart';
+import 'package:ScaledGuideApp/services/auth.dart';
 import 'package:ScaledGuideApp/views/create_account_form.dart';
 import 'package:ScaledGuideApp/views/detail_method.dart';
 import 'package:ScaledGuideApp/views/login_screen.dart';
 import 'package:ScaledGuideApp/views/run_simulation.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/methods.dart';
@@ -10,8 +14,13 @@ import '../routes/app_routes.dart';
 import '../tabBar/main_tabbar.dart';
 import '../views/organization_edit_form.dart';
 import '../views/organization_form.dart';
+import 'models/Method.dart';
+import 'models/Organization.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  FirebaseFirestore.instance;
   runApp(const MyApp());
 }
 
@@ -20,6 +29,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -27,7 +37,16 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (ctx) => Methods(),
-        )
+        ),
+        StreamProvider<UserApp?>.value(
+            value: AuthService().user, initialData: null,
+        ),
+        StreamProvider<List<Organization>>.value(
+          value: Organizations().organizations, initialData: [],
+        ),
+        StreamProvider<List<Method>>.value(
+          value: Methods().methods, initialData: [],
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

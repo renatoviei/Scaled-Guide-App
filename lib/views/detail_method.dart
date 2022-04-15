@@ -30,7 +30,7 @@ class _DetailMethodState extends State<DetailMethod> {
             child: Text(
               method.name,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 24,
                 color: Colors.blue,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Lato',
@@ -43,13 +43,13 @@ class _DetailMethodState extends State<DetailMethod> {
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical, //.horizontal
               child: Container(
-                margin: const EdgeInsets.only(left: 20, right: 20,),
+                margin: const EdgeInsets.only(left: 20, right: 20, top: 22, bottom: 20),
                 child: Column(
                   children: <Widget>[
                     Text(
-                      method.description,
+                      method.description.replaceAll('\\n', '\n'),
                       style: TextStyle(
-                        fontSize: 16.0,
+                        fontSize: 18.0,
                       ),
                       textAlign: TextAlign.justify,
                     ),

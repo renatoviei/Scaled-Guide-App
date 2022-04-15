@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/Organization.dart';
+import '../models/UserApp.dart';
 import '../provider/organizations.dart';
 
 class OrganizationForm extends StatefulWidget {
@@ -17,6 +18,8 @@ class _FormState extends State<OrganizationForm> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserApp?>(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue[900],
@@ -83,8 +86,8 @@ class _FormState extends State<OrganizationForm> {
                         validator: (value) {
                           if (value == null || value.trim().isEmpty)
                             return 'Inform the description';
-                          if (value.length > 100)
-                            return 'Your description must be less than 100 characters';
+                          if (value.length > 280)
+                            return 'Your description must be less than 280 characters';
                         },
                         onSaved: (value) => _formData['description'] = value!,
                       ),
@@ -186,7 +189,8 @@ class _FormState extends State<OrganizationForm> {
 
                     Provider.of<Organizations>(context, listen: false).put(
                       Organization(
-                          id: '',
+                          id: ' ',
+                          userId: user!.id,
                           name: _formData['name']!,
                           email: _formData['email']!,
                           cnpj: _formData['cnpj']!,

@@ -1,9 +1,12 @@
+import 'package:ScaledGuideApp/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../models/UserApp.dart';
 import '../provider/organizations.dart';
 
 import '../models/Organization.dart';
+import '../tabBar/main_tabbar.dart';
 
 class OrganizationEditForm extends StatefulWidget {
   var organization;
@@ -37,6 +40,7 @@ class _FormState extends State<OrganizationEditForm> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserApp?>(context);
     final Organization organization = widget.organization;
 
     if (_formData.isEmpty) {
@@ -56,7 +60,7 @@ class _FormState extends State<OrganizationEditForm> {
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              "Edit the fields below",
+              "Edit the fields below about your organization",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,
@@ -221,6 +225,7 @@ class _FormState extends State<OrganizationEditForm> {
                     Provider.of<Organizations>(context, listen: false).put(
                       Organization(
                         id: _formData['id']!,
+                        userId: user!.id,
                         name: _formData['name']!,
                         email: _formData['email']!,
                         cnpj: _formData['cnpj']!,

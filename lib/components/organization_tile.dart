@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/organizations.dart';
@@ -12,7 +13,7 @@ class OrganizationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final avatar = organization.avatarUrl == null ||
+    final avatar = organization == null ||
             organization.avatarUrl.isEmpty
         ? const CircleAvatar(child: Icon(Icons.person))
         : CircleAvatar(backgroundImage: NetworkImage(organization.avatarUrl));
@@ -27,7 +28,9 @@ class OrganizationTile extends StatelessWidget {
           fontFamily: 'Lato',
         ),
       ),
-      subtitle: Text(organization.description),
+      subtitle: Text(organization.description,
+        textAlign: TextAlign.justify,
+      ),
       trailing: SizedBox(
         width: 100,
         child: Row(
@@ -50,7 +53,11 @@ class OrganizationTile extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (cxt) => AlertDialog(
-                    title: const Text('Delete organization'),
+                    title: const Text('Delete organization',
+                      style: TextStyle(
+                        color: Colors.orange,
+                      ),
+                    ),
                     content: const Text('Are you sure?'),
                     actions: <Widget>[
                       TextButton(

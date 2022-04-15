@@ -1,5 +1,6 @@
 class Organization {
   final String id;
+  final String userId;
   final String name;
   final String email;
   final String cnpj;
@@ -11,6 +12,7 @@ class Organization {
 
   const Organization({
     required this.id,
+    required this.userId,
     required this.name,
     required this.email,
     required this.cnpj,
