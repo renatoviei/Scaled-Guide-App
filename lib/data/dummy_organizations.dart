@@ -3,6 +3,7 @@ import '../models/Organization.dart';
 const DUMMY_ORGANIZATIONS = {
   '1': Organization(
       id: '1',
+      userId: '',
       name: 'Take Blip',
       email: 'take@take.net',
       cnpj: '38.828.358/0001-80',
@@ -14,6 +15,7 @@ const DUMMY_ORGANIZATIONS = {
   ),
   '2': Organization(
       id: '2',
+      userId: '',
       name: 'CI&T',
       email: 'ci&t@CI&T.net',
       cnpj: '38.828.123/4567-80',
@@ -25,6 +27,7 @@ const DUMMY_ORGANIZATIONS = {
   ),
   '3': Organization(
       id: '3',
+      userId: '',
       name: 'Thought Works',
       email: 'tw@tw.net',
       cnpj: '38.789.358/5555-80',
@@ -36,6 +39,7 @@ const DUMMY_ORGANIZATIONS = {
   ),
   '4': Organization(
       id: '4',
+      userId: '',
       name: 'Avanade',
       email: 'avanade@avanade.net',
       cnpj: '55.423.358/5551-80',

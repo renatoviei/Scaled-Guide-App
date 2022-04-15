@@ -1,72 +1,68 @@
-import 'dart:math';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import '../data/dummy_organizations.dart';
 
 import '../models/Organization.dart';
 
 class Organizations with ChangeNotifier {
-  final Map<String, Organization> _itens = {...DUMMY_ORGANIZATIONS};
+  final CollectionReference organizationsCollection =
+      FirebaseFirestore.instance.collection('organizations');
 
-  List<Organization> get all {
-    return [..._itens.values];
+  List<Organization> _orgListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      return Organization(
+        id: doc.id,
+        userId: doc['userId'] ?? ' ',
+        name: doc['name'] ?? ' ',
+        email: doc['email'] ?? ' ',
+        cnpj: doc['cnpj'] ?? ' ',
+        description: doc['description'] ?? ' ',
+        sector: doc['sector'] ?? ' ',
+        avatarUrl: doc['avatarUrl'] ?? ' ',
+        method: doc['method'] ?? ' ',
+        hasExperienceWithAgile: doc['hasExperienceWithAgile'] ?? false,
+      );
+    }).toList();
   }
 
-  int get count {
-    return _itens.length;
+  Stream<List<Organization>> get organizations {
+    return organizationsCollection.snapshots().map(_orgListFromSnapshot);
   }
 
-  Organization byIndex(int i) {
-    return _itens.values.elementAt(i);
-  }
-
-  void put(Organization org) {
+  Future put(Organization org) async {
     if (org == null) {
       return;
     }
 
-    // alterar
-    if (org.id != null &&
-        org.id.trim().isNotEmpty &&
-        _itens.containsKey(org.id)) {
-      _itens.update(
-        org.id,
-        (_) => Organization(
-            id: org.id,
-            name: org.name,
-            email: org.email,
-            cnpj: org.cnpj,
-            description: org.description,
-            sector: org.sector,
-            avatarUrl: org.avatarUrl,
-            method: org.method,
-            hasExperienceWithAgile: org.hasExperienceWithAgile),
-      );
+    if (org.id == ' ') {
+      return await organizationsCollection.doc().set({
+        'userId': org.userId,
+        'name': org.name,
+        'email': org.email,
+        'cnpj': org.cnpj,
+        'description': org.description,
+        'sector': org.sector,
+        'avatarUrl': org.avatarUrl,
+        'method': org.method,
+        'hasExperienceWithAgile': org.hasExperienceWithAgile
+      });
     } else {
-      // adicionar
-      final id = Random().nextDouble().toString();
-      _itens.putIfAbsent(
-        id,
-        () => Organization(
-          id: id,
-          name: org.name,
-          email: org.email,
-          cnpj: org.cnpj,
-          description: org.description,
-          sector: org.sector,
-          avatarUrl: org.avatarUrl,
-          method: org.method,
-          hasExperienceWithAgile: org.hasExperienceWithAgile,
-        ),
-      );
+      return await organizationsCollection.doc(org.id).set({
+        'userId': org.userId,
+        'name': org.name,
+        'email': org.email,
+        'cnpj': org.cnpj,
+        'description': org.description,
+        'sector': org.sector,
+        'avatarUrl': org.avatarUrl,
+        'method': org.method,
+        'hasExperienceWithAgile': org.hasExperienceWithAgile
+      });
     }
-    notifyListeners();
   }
 
-  void remove(Organization org) {
+  void remove(Organization org) async {
     if (org != null && org.id != null) {
-      _itens.remove(org.id);
-      notifyListeners();
+      return await organizationsCollection.doc(org.id).delete();
     }
   }
 }

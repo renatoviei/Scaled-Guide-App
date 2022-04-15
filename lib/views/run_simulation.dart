@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../models/UserApp.dart';
 import '../provider/organizations.dart';
 
 import '../models/Organization.dart';
@@ -37,6 +38,7 @@ class _FormState extends State<RunSimulationForm> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserApp?>(context);
     final Organization organization = widget.organization;
 
     if (_formData.isEmpty) {
@@ -190,6 +192,7 @@ class _FormState extends State<RunSimulationForm> {
                   Provider.of<Organizations>(context, listen: false).put(
                     Organization(
                       id: _formData['id']!,
+                      userId: user!.id,
                       name: _formData['name']!,
                       email: _formData['email']!,
                       cnpj: _formData['cnpj']!,

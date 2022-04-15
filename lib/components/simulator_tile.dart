@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/Organization.dart';
 import '../routes/app_routes.dart';
-import '../views/organization_edit_form.dart';
 import '../views/run_simulation.dart';
 
 class SimulatorTile extends StatelessWidget {

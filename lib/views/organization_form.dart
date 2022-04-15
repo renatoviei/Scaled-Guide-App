@@ -1,7 +1,10 @@
+import 'package:ScaledGuideApp/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/Organization.dart';
+import '../models/UserApp.dart';
 import '../provider/organizations.dart';
+import '../tabBar/main_tabbar.dart';
 
 class OrganizationForm extends StatefulWidget {
   @override
@@ -17,6 +20,8 @@ class _FormState extends State<OrganizationForm> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserApp?>(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue[900],
@@ -186,7 +191,8 @@ class _FormState extends State<OrganizationForm> {
 
                     Provider.of<Organizations>(context, listen: false).put(
                       Organization(
-                          id: '',
+                          id: ' ',
+                          userId: user!.id,
                           name: _formData['name']!,
                           email: _formData['email']!,
                           cnpj: _formData['cnpj']!,
