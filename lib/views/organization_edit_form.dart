@@ -60,7 +60,7 @@ class _FormState extends State<OrganizationEditForm> {
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              "Edit the fields below",
+              "Edit the fields below about your organization",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,

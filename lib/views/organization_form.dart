@@ -1,10 +1,8 @@
-import 'package:ScaledGuideApp/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/Organization.dart';
 import '../models/UserApp.dart';
 import '../provider/organizations.dart';
-import '../tabBar/main_tabbar.dart';
 
 class OrganizationForm extends StatefulWidget {
   @override
@@ -88,8 +86,8 @@ class _FormState extends State<OrganizationForm> {
                         validator: (value) {
                           if (value == null || value.trim().isEmpty)
                             return 'Inform the description';
-                          if (value.length > 100)
-                            return 'Your description must be less than 100 characters';
+                          if (value.length > 280)
+                            return 'Your description must be less than 280 characters';
                         },
                         onSaved: (value) => _formData['description'] = value!,
                       ),

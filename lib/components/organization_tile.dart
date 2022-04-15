@@ -28,7 +28,9 @@ class OrganizationTile extends StatelessWidget {
           fontFamily: 'Lato',
         ),
       ),
-      subtitle: Text(organization.description),
+      subtitle: Text(organization.description,
+        textAlign: TextAlign.justify,
+      ),
       trailing: SizedBox(
         width: 100,
         child: Row(

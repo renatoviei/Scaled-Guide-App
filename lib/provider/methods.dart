@@ -1,19 +1,24 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import '../data/dummy_methods.dart';
+
 import '../models/Method.dart';
 
 class Methods with ChangeNotifier {
-  final Map<String, Method> _itens = {...DUMMY_METHODS};
+  final CollectionReference methodsCollection =
+  FirebaseFirestore.instance.collection('methods');
 
-  List<Method> get all {
-    return [..._itens.values];
+  List<Method> _methodsListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      return Method(
+        id: doc.id,
+        name: doc['name'] ?? ' ',
+        shortDescription: doc['shortDescription'] ?? ' ',
+        description: doc['description'] ?? ' ',
+      );
+    }).toList();
   }
 
-  int get count {
-    return _itens.length;
-  }
-
-  Method byIndex(int i) {
-    return _itens.values.elementAt(i);
+  Stream<List<Method>> get methods {
+    return methodsCollection.snapshots().map(_methodsListFromSnapshot);
   }
 }

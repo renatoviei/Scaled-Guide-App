@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../components/simulator_tile.dart';
 import '../models/Organization.dart';
 import '../provider/organizations.dart';
-import '../shared/loading.dart';
+import '../shared/loading_tabview.dart';
 
 class SimulatorList {
-  Widget buildListSimulator(List<Organization> organizations) {
+  Widget buildListSimulator(List<Organization> organizations, String? uid) {
     return StreamBuilder<List<Organization>>(
-        stream: Organizations().organizations,
+        stream: Organizations(uid: uid).organizations,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Organization>? orgs = snapshot.data;
@@ -31,14 +31,13 @@ class SimulatorList {
                 Expanded(
                   child: ListView.builder(
                     itemCount: orgs?.length,
-                    itemBuilder: (ctx, i) =>
-                        SimulatorTile(orgs!.elementAt(i)),
+                    itemBuilder: (ctx, i) => SimulatorTile(orgs!.elementAt(i)),
                   ),
                 ),
               ],
             );
           } else {
-            return Loading();
+            return LoadingTabView();
           }
         });
   }

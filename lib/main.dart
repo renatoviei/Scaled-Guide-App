@@ -14,6 +14,7 @@ import '../routes/app_routes.dart';
 import '../tabBar/main_tabbar.dart';
 import '../views/organization_edit_form.dart';
 import '../views/organization_form.dart';
+import 'models/Method.dart';
 import 'models/Organization.dart';
 
 void main() async{
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -41,6 +43,9 @@ class MyApp extends StatelessWidget {
         ),
         StreamProvider<List<Organization>>.value(
           value: Organizations().organizations, initialData: [],
+        ),
+        StreamProvider<List<Method>>.value(
+          value: Methods().methods, initialData: [],
         ),
       ],
       child: MaterialApp(

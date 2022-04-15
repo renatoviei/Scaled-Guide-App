@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import '../models/Organization.dart';
 
 class Organizations with ChangeNotifier {
+  String? uid;
+  Organizations({ this.uid });
+
   final CollectionReference organizationsCollection =
       FirebaseFirestore.instance.collection('organizations');
 
@@ -25,7 +28,7 @@ class Organizations with ChangeNotifier {
   }
 
   Stream<List<Organization>> get organizations {
-    return organizationsCollection.snapshots().map(_orgListFromSnapshot);
+    return organizationsCollection.where('userId', isEqualTo: uid).snapshots().map(_orgListFromSnapshot);
   }
 
   Future put(Organization org) async {

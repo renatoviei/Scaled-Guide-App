@@ -1,14 +1,14 @@
-import 'package:ScaledGuideApp/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 import '../components/organization_tile.dart';
 import '../models/Organization.dart';
 import '../provider/organizations.dart';
+import '../shared/loading_tabview.dart';
 
 class OrganizationsList {
-  Widget buildListOrganizations(List<Organization> organizations) {
+  Widget buildListOrganizations(List<Organization> organizations, String? uid) {
     return StreamBuilder<List<Organization>>(
-        stream: Organizations().organizations,
+        stream: Organizations(uid: uid).organizations,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Organization>? orgs = snapshot.data;
@@ -21,7 +21,7 @@ class OrganizationsList {
               ),
             );
           } else {
-            return Loading();
+            return LoadingTabView();
           }
         });
   }

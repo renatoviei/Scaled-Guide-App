@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/Method.dart';
 import '../models/Organization.dart';
+import '../models/UserApp.dart';
 import '../routes/app_routes.dart';
 
-import '../provider/methods.dart';
 import '../services/auth.dart';
 import '../views/login_screen.dart';
 import '../views/methods_list.dart';
@@ -11,7 +12,7 @@ import '../views/organizations_list.dart';
 import '../views/simulator_list.dart';
 
 class TabBarMain extends StatefulWidget {
-  @override
+ @override
   State<TabBarMain> createState() => _TabBarMainState();
 }
 
@@ -22,15 +23,16 @@ class _TabBarMainState extends State<TabBarMain> {
   @override
   Widget build(BuildContext context) {
     final organizations = Provider.of<List<Organization>>(context);
-    final Methods methods = Provider.of(context);
+    final methods = Provider.of<List<Method>>(context);
+    final user = Provider.of<UserApp?>(context);
 
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         body: TabBarView(
           children: [
-            OrganizationsList().buildListOrganizations(organizations),
-            SimulatorList().buildListSimulator(organizations),
+            OrganizationsList().buildListOrganizations(organizations, user?.id),
+            SimulatorList().buildListSimulator(organizations, user?.id),
             MethodsList().buildListAgileMethods(methods),
           ],
         ),
