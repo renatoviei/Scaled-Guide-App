@@ -23,6 +23,32 @@ class _FormState extends State<OrganizationEditForm> {
   String method = 'Not simulated';
   String sector = '';
   bool hasExperienceWithAgile = false;
+  bool hasLeadershipSupport = false;
+  bool hasStakeholderMembership = false;
+  bool hasFlexibleBudget = false;
+  bool hasAgileFluidTeamStructure = false;
+  bool hasWellPreparedPlanning = false;
+  bool hasDedicatedFullTimeTeam = false;
+  bool hasEffectiveImprovementMechanism = false;
+  bool hasProximityAgileTeams = false;
+  bool hasDifferentArenasCoordination = false;
+  bool hasPrinciplesAheadMetrics = false;
+  bool hasBalanceAutonomyNeedSupervision = false;
+  bool hasMaintenanceTransparency = false;
+  bool hasElementCustomization = false;
+  bool hasArchitecturalGuidelines = false;
+  bool hasBalancedUseDocumentation = false;
+  bool hasRaiseAwarenessDependenciesBetweenTeams = false;
+  bool hasWellStructuredAdoptionApproach = false;
+  bool hasStandardizationAgilePracticesAmongTeams = false;
+  bool hasTrainingCoachingEveryoneAgileAdoption = false;
+  bool hasExternalCoachSupportMethodAdoption = false;
+  bool hasCommunityPractice = false;
+  bool hasShareCommonVision = false;
+  bool hasPeopleInvolvementAdoption = false;
+  bool hasTrustBetweenTeams = false;
+  bool hasInformationSharingSystemsWellStructured = false;
+  bool hasCommonInfrastructure = false;
 
   void _loadFormData(Organization organization) {
     if (organization != null) {
@@ -35,6 +61,41 @@ class _FormState extends State<OrganizationEditForm> {
       _formData['method'] = organization.method;
       sector = organization.sector;
       hasExperienceWithAgile = organization.hasExperienceWithAgile;
+      hasLeadershipSupport = organization.hasLeadershipSupport;
+      hasStakeholderMembership = organization.hasStakeholderMembership;
+      hasFlexibleBudget = organization.hasFlexibleBudget;
+      hasAgileFluidTeamStructure = organization.hasAgileFluidTeamStructure;
+      hasWellPreparedPlanning = organization.hasWellPreparedPlanning;
+      hasDedicatedFullTimeTeam = organization.hasDedicatedFullTimeTeam;
+      hasEffectiveImprovementMechanism =
+          organization.hasEffectiveImprovementMechanism;
+      hasProximityAgileTeams = organization.hasProximityAgileTeams;
+      hasDifferentArenasCoordination =
+          organization.hasDifferentArenasCoordination;
+      hasPrinciplesAheadMetrics = organization.hasPrinciplesAheadMetrics;
+      hasBalanceAutonomyNeedSupervision =
+          organization.hasBalanceAutonomyNeedSupervision;
+      hasMaintenanceTransparency = organization.hasMaintenanceTransparency;
+      hasElementCustomization = organization.hasElementCustomization;
+      hasArchitecturalGuidelines = organization.hasArchitecturalGuidelines;
+      hasBalancedUseDocumentation = organization.hasBalancedUseDocumentation;
+      hasRaiseAwarenessDependenciesBetweenTeams =
+          organization.hasRaiseAwarenessDependenciesBetweenTeams;
+      hasWellStructuredAdoptionApproach =
+          organization.hasWellStructuredAdoptionApproach;
+      hasStandardizationAgilePracticesAmongTeams =
+          organization.hasStandardizationAgilePracticesAmongTeams;
+      hasTrainingCoachingEveryoneAgileAdoption =
+          organization.hasTrainingCoachingEveryoneAgileAdoption;
+      hasExternalCoachSupportMethodAdoption =
+          organization.hasExternalCoachSupportMethodAdoption;
+      hasCommunityPractice = organization.hasCommunityPractice;
+      hasShareCommonVision = organization.hasShareCommonVision;
+      hasPeopleInvolvementAdoption = organization.hasPeopleInvolvementAdoption;
+      hasTrustBetweenTeams = organization.hasTrustBetweenTeams;
+      hasInformationSharingSystemsWellStructured =
+          organization.hasInformationSharingSystemsWellStructured;
+      hasCommonInfrastructure = organization.hasCommonInfrastructure;
     }
   }
 
@@ -173,7 +234,7 @@ class _FormState extends State<OrganizationEditForm> {
                       TextFormField(
                         initialValue: _formData['avatarUrl'],
                         decoration:
-                            const InputDecoration(labelText: 'Your avatar URL'),
+                            const InputDecoration(labelText: 'Your avatar URL (logo)'),
                         onSaved: (value) => _formData['avatarUrl'] = value!,
                       ),
                       TextFormField(
@@ -182,6 +243,7 @@ class _FormState extends State<OrganizationEditForm> {
                             labelText: 'Any Agile Framework/Method in use?'),
                         onSaved: (value) => _formData['method'] = value!,
                       ),
+                      const SizedBox(height: 12),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         title: const Text(
@@ -190,6 +252,326 @@ class _FormState extends State<OrganizationEditForm> {
                         onChanged: (bool? value) {
                           setState(() {
                             hasExperienceWithAgile = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      Text("Agile Goals",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be strong leadership support and commitment to agile adoption and deployment?'),
+                        value: hasLeadershipSupport,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasLeadershipSupport = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be buy-in from all stakeholders?'),
+                        value: hasStakeholderMembership,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasStakeholderMembership = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will the budget be flexible?'),
+                        value: hasFlexibleBudget,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasFlexibleBudget = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be an agile and fluid team structure?'),
+                        value: hasAgileFluidTeamStructure,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasAgileFluidTeamStructure = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Should the planning event be well prepared?'),
+                        value: hasWellPreparedPlanning,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasWellPreparedPlanning = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will the team be dedicated all the time?'),
+                        value: hasDedicatedFullTimeTeam,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasDedicatedFullTimeTeam = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be an effective mechanism for the continuous improvement process?'),
+                        value: hasEffectiveImprovementMechanism,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasEffectiveImprovementMechanism = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be physical proximity of agile teams?'),
+                        value: hasProximityAgileTeams,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasProximityAgileTeams = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be different arenas for coordination over time?'),
+                        value: hasDifferentArenasCoordination,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasDifferentArenasCoordination = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will principles be ahead of metrics?'),
+                        value: hasPrinciplesAheadMetrics,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasPrinciplesAheadMetrics = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be a balance of agile autonomy with the need for supervision?'),
+                        value: hasBalanceAutonomyNeedSupervision,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasBalanceAutonomyNeedSupervision = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will the process maintain transparency across a large number of fast, adaptable teams and projects?'),
+                        value: hasMaintenanceTransparency,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasMaintenanceTransparency = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be custom ceremonies, practices, agile tools, support and support?'),
+                        value: hasElementCustomization,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasElementCustomization = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be architectural guidelines and a dedicated architect for the group?'),
+                        value: hasArchitecturalGuidelines,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasArchitecturalGuidelines = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be balanced use of the software' + "'" + 's internal documentation?'),
+                        value: hasBalancedUseDocumentation,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasBalancedUseDocumentation = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will it be important to raise awareness of dependencies between teams through joint meetings?'),
+                        value: hasRaiseAwarenessDependenciesBetweenTeams,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasRaiseAwarenessDependenciesBetweenTeams = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be a well-structured adoption approach?'),
+                        value: hasWellStructuredAdoptionApproach,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasWellStructuredAdoptionApproach = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be standardization of agile practices among teams?'),
+                        value: hasStandardizationAgilePracticesAmongTeams,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasStandardizationAgilePracticesAmongTeams = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be training and coaching for everyone on agile adoption?'),
+                        value: hasTrainingCoachingEveryoneAgileAdoption,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasTrainingCoachingEveryoneAgileAdoption = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be an external coach to support the adoption of the method?'),
+                        value: hasExternalCoachSupportMethodAdoption,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasExternalCoachSupportMethodAdoption = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be a Community of Practice for continuous improvement?'),
+                        value: hasCommunityPractice,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasCommunityPractice = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be a shared vision?'),
+                        value: hasShareCommonVision,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasShareCommonVision = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be involvement and engagement of people in the adoption?'),
+                        value: hasPeopleInvolvementAdoption,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasPeopleInvolvementAdoption = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be trust between the teams?'),
+                        value: hasTrustBetweenTeams,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasTrustBetweenTeams = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will information and knowledge sharing systems be well structured?'),
+                        value: hasInformationSharingSystemsWellStructured,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasInformationSharingSystemsWellStructured = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            'Will there be joint/common infrastructure?'),
+                        value: hasCommonInfrastructure,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasCommonInfrastructure = value!;
                           });
                         },
                       ),
@@ -234,6 +616,43 @@ class _FormState extends State<OrganizationEditForm> {
                         avatarUrl: _formData['avatarUrl']!,
                         method: method,
                         hasExperienceWithAgile: hasExperienceWithAgile,
+                        hasLeadershipSupport: hasLeadershipSupport,
+                        hasStakeholderMembership: hasStakeholderMembership,
+                        hasFlexibleBudget: hasFlexibleBudget,
+                        hasAgileFluidTeamStructure: hasAgileFluidTeamStructure,
+                        hasWellPreparedPlanning: hasWellPreparedPlanning,
+                        hasDedicatedFullTimeTeam: hasDedicatedFullTimeTeam,
+                        hasEffectiveImprovementMechanism:
+                            hasEffectiveImprovementMechanism,
+                        hasProximityAgileTeams: hasProximityAgileTeams,
+                        hasDifferentArenasCoordination:
+                            hasDifferentArenasCoordination,
+                        hasPrinciplesAheadMetrics: hasPrinciplesAheadMetrics,
+                        hasBalanceAutonomyNeedSupervision:
+                            hasBalanceAutonomyNeedSupervision,
+                        hasMaintenanceTransparency: hasMaintenanceTransparency,
+                        hasElementCustomization: hasElementCustomization,
+                        hasArchitecturalGuidelines: hasArchitecturalGuidelines,
+                        hasBalancedUseDocumentation:
+                            hasBalancedUseDocumentation,
+                        hasRaiseAwarenessDependenciesBetweenTeams:
+                            hasRaiseAwarenessDependenciesBetweenTeams,
+                        hasWellStructuredAdoptionApproach:
+                            hasWellStructuredAdoptionApproach,
+                        hasStandardizationAgilePracticesAmongTeams:
+                            hasStandardizationAgilePracticesAmongTeams,
+                        hasTrainingCoachingEveryoneAgileAdoption:
+                            hasTrainingCoachingEveryoneAgileAdoption,
+                        hasExternalCoachSupportMethodAdoption:
+                            hasExternalCoachSupportMethodAdoption,
+                        hasCommunityPractice: hasCommunityPractice,
+                        hasShareCommonVision: hasShareCommonVision,
+                        hasPeopleInvolvementAdoption:
+                            hasPeopleInvolvementAdoption,
+                        hasTrustBetweenTeams: hasTrustBetweenTeams,
+                        hasInformationSharingSystemsWellStructured:
+                            hasInformationSharingSystemsWellStructured,
+                        hasCommonInfrastructure: hasCommonInfrastructure,
                       ),
                     );
 
