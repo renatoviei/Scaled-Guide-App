@@ -20,6 +20,12 @@ class _FormState extends State<RunSimulationForm> {
   final Map<String, String> _formData = {};
   String method = 'Not simulated';
   String sector = '';
+  int safe = 0;
+  int less = 0;
+  int scrumAtScale = 0;
+  int dad = 0;
+  int spotifyModel = 0;
+  int max = 0;
   bool hasExperienceWithAgile = false;
   bool hasLeadershipSupport = false;
   bool hasStakeholderMembership = false;
@@ -44,6 +50,7 @@ class _FormState extends State<RunSimulationForm> {
   bool hasCommunityPractice = false;
   bool hasShareCommonVision = false;
   bool hasPeopleInvolvementAdoption = false;
+  bool hasDisciplinedTeams = false;
   bool hasTrustBetweenTeams = false;
   bool hasInformationSharingSystemsWellStructured = false;
   bool hasCommonInfrastructure = false;
@@ -90,11 +97,262 @@ class _FormState extends State<RunSimulationForm> {
       hasCommunityPractice = organization.hasCommunityPractice;
       hasShareCommonVision = organization.hasShareCommonVision;
       hasPeopleInvolvementAdoption = organization.hasPeopleInvolvementAdoption;
+      hasDisciplinedTeams = organization.hasDisciplinedTeams;
       hasTrustBetweenTeams = organization.hasTrustBetweenTeams;
       hasInformationSharingSystemsWellStructured =
           organization.hasInformationSharingSystemsWellStructured;
       hasCommonInfrastructure = organization.hasCommonInfrastructure;
     }
+  }
+
+  String _runSimulator() {
+    if (hasLeadershipSupport) {
+      safe += 1;
+      dad += 1;
+      spotifyModel += 1;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if (hasStakeholderMembership) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 1;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasFlexibleBudget) {
+      safe += 1;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasAgileFluidTeamStructure) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 1;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasWellPreparedPlanning) {
+      safe += 4;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasDedicatedFullTimeTeam) {
+      safe += 2;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+    if(hasEffectiveImprovementMechanism) {
+      safe += 2;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasProximityAgileTeams) {
+      safe += 1;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 3;
+    }
+
+    if(hasDifferentArenasCoordination) {
+      safe += 2;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 3;
+    }
+
+    if(hasPrinciplesAheadMetrics) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasBalanceAutonomyNeedSupervision) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 2;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasMaintenanceTransparency) {
+      safe += 1;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 1;
+      less += 1;
+    }
+
+    if(hasElementCustomization) {
+      safe += 2;
+      dad += 0;
+      spotifyModel += 1;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasArchitecturalGuidelines) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasBalancedUseDocumentation) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasRaiseAwarenessDependenciesBetweenTeams) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasWellStructuredAdoptionApproach) {
+      safe += 0;
+      dad += 1;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasStandardizationAgilePracticesAmongTeams) {
+      safe += 0;
+      dad += 1;
+      spotifyModel += 0;
+      scrumAtScale += 1;
+      less += 0;
+
+    }
+
+    if(hasTrainingCoachingEveryoneAgileAdoption) {
+      safe += 4;
+      dad += 2;
+      spotifyModel += 1;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasExternalCoachSupportMethodAdoption) {
+      safe += 3;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasCommunityPractice) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 1;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasShareCommonVision) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasPeopleInvolvementAdoption) {
+      safe += 3;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasDisciplinedTeams) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasTrustBetweenTeams) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 1;
+    }
+
+    if(hasInformationSharingSystemsWellStructured) {
+      safe += 0;
+      dad += 0;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    if(hasCommonInfrastructure) {
+      safe += 0;
+      dad += 1;
+      spotifyModel += 0;
+      scrumAtScale += 0;
+      less += 0;
+    }
+
+    max = [safe, less, spotifyModel, dad, scrumAtScale].reduce((curr, next) => curr > next? curr: next);
+
+    if(safe > less && safe > scrumAtScale && safe > dad && safe > spotifyModel) {
+      return "SAFe";
+    }
+    if (less > safe && less > scrumAtScale && less > dad && less > spotifyModel) {
+      return "LeSS";
+    }
+    if (scrumAtScale > safe && scrumAtScale > less && scrumAtScale > dad && scrumAtScale > spotifyModel) {
+      return "Scrum-at-Scale";
+    }
+    if (dad > safe && dad > less && dad > scrumAtScale && dad > spotifyModel) {
+      return "DAD";
+    }
+    if (spotifyModel > safe && spotifyModel > less && spotifyModel > scrumAtScale && spotifyModel > dad) {
+      return "Spotify Model";
+    }
+
+    if((safe == max) && (safe == less || safe == spotifyModel || safe == dad || safe == scrumAtScale)) {
+      return "SAFe";
+    }
+
+    if((less == max) && (less == spotifyModel || less == dad || less == scrumAtScale)) {
+      return "LeSS";
+    }
+
+    if((spotifyModel == max) && (spotifyModel == dad || spotifyModel == scrumAtScale)) {
+      return "Spotify Model";
+    }
+
+    return "DAD";
   }
 
   @override
@@ -423,6 +681,14 @@ class _FormState extends State<RunSimulationForm> {
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         title: const Text(
+                            'Will there be disciplined teams?'),
+                        value: hasDisciplinedTeams,
+                        onChanged: null,
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
                             'Will there be trust between the teams?'),
                         value: hasTrustBetweenTeams,
                         onChanged: null,
@@ -465,7 +731,7 @@ class _FormState extends State<RunSimulationForm> {
                 onPressed: () async {
                   _form.currentState!.save();
 
-                  method = 'Scrum-at-Scale';
+                  method = _runSimulator();
 
                   Provider.of<Organizations>(context, listen: false).put(
                     Organization(
@@ -512,6 +778,7 @@ class _FormState extends State<RunSimulationForm> {
                       hasShareCommonVision: hasShareCommonVision,
                       hasPeopleInvolvementAdoption:
                       hasPeopleInvolvementAdoption,
+                      hasDisciplinedTeams: hasDisciplinedTeams,
                       hasTrustBetweenTeams: hasTrustBetweenTeams,
                       hasInformationSharingSystemsWellStructured:
                       hasInformationSharingSystemsWellStructured,

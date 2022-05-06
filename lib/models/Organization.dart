@@ -32,6 +32,7 @@ class Organization {
   final bool hasCommunityPractice;
   final bool hasShareCommonVision;
   final bool hasPeopleInvolvementAdoption;
+  final bool hasDisciplinedTeams;
   final bool hasTrustBetweenTeams;
   final bool hasInformationSharingSystemsWellStructured;
   final bool hasCommonInfrastructure;
@@ -72,6 +73,7 @@ class Organization {
     required this.hasCommunityPractice,
     required this.hasShareCommonVision,
     required this.hasPeopleInvolvementAdoption,
+    required this.hasDisciplinedTeams,
     required this.hasTrustBetweenTeams,
     required this.hasInformationSharingSystemsWellStructured,
     required this.hasCommonInfrastructure,

@@ -57,6 +57,7 @@ class Organizations with ChangeNotifier {
         hasShareCommonVision: doc['hasShareCommonVision'] ?? false,
         hasPeopleInvolvementAdoption:
             doc['hasPeopleInvolvementAdoption'] ?? false,
+        hasDisciplinedTeams: doc['hasDisciplinedTeams'] ?? false,
         hasTrustBetweenTeams: doc['hasTrustBetweenTeams'] ?? false,
         hasInformationSharingSystemsWellStructured:
             doc['hasInformationSharingSystemsWellStructured'] ?? false,
@@ -117,6 +118,7 @@ class Organizations with ChangeNotifier {
         'hasCommunityPractice': org.hasCommunityPractice,
         'hasShareCommonVision': org.hasShareCommonVision,
         'hasPeopleInvolvementAdoption': org.hasPeopleInvolvementAdoption,
+        'hasDisciplinedTeams': org.hasDisciplinedTeams,
         'hasTrustBetweenTeams': org.hasTrustBetweenTeams,
         'hasInformationSharingSystemsWellStructured':
             org.hasInformationSharingSystemsWellStructured,
@@ -162,6 +164,7 @@ class Organizations with ChangeNotifier {
         'hasCommunityPractice': org.hasCommunityPractice,
         'hasShareCommonVision': org.hasShareCommonVision,
         'hasPeopleInvolvementAdoption': org.hasPeopleInvolvementAdoption,
+        'hasDisciplinedTeams': org.hasDisciplinedTeams,
         'hasTrustBetweenTeams': org.hasTrustBetweenTeams,
         'hasInformationSharingSystemsWellStructured':
             org.hasInformationSharingSystemsWellStructured,

@@ -38,6 +38,7 @@ class _FormState extends State<OrganizationForm> {
   bool hasCommunityPractice = false;
   bool hasShareCommonVision = false;
   bool hasPeopleInvolvementAdoption = false;
+  bool hasDisciplinedTeams = false;
   bool hasTrustBetweenTeams = false;
   bool hasInformationSharingSystemsWellStructured = false;
   bool hasCommonInfrastructure = false;
@@ -473,6 +474,18 @@ class _FormState extends State<OrganizationForm> {
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         title: const Text(
+                            'Will there be disciplined teams?'),
+                        value: hasDisciplinedTeams,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasDisciplinedTeams = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
                             'Will there be trust between the teams?'),
                         value: hasTrustBetweenTeams,
                         onChanged: (bool? value) {
@@ -579,6 +592,7 @@ class _FormState extends State<OrganizationForm> {
                         hasShareCommonVision: hasShareCommonVision,
                         hasPeopleInvolvementAdoption:
                             hasPeopleInvolvementAdoption,
+                        hasDisciplinedTeams: hasDisciplinedTeams,
                         hasTrustBetweenTeams: hasTrustBetweenTeams,
                         hasInformationSharingSystemsWellStructured:
                             hasInformationSharingSystemsWellStructured,

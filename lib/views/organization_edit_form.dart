@@ -46,6 +46,7 @@ class _FormState extends State<OrganizationEditForm> {
   bool hasCommunityPractice = false;
   bool hasShareCommonVision = false;
   bool hasPeopleInvolvementAdoption = false;
+  bool hasDisciplinedTeams = false;
   bool hasTrustBetweenTeams = false;
   bool hasInformationSharingSystemsWellStructured = false;
   bool hasCommonInfrastructure = false;
@@ -92,6 +93,7 @@ class _FormState extends State<OrganizationEditForm> {
       hasCommunityPractice = organization.hasCommunityPractice;
       hasShareCommonVision = organization.hasShareCommonVision;
       hasPeopleInvolvementAdoption = organization.hasPeopleInvolvementAdoption;
+      hasDisciplinedTeams = organization.hasDisciplinedTeams;
       hasTrustBetweenTeams = organization.hasTrustBetweenTeams;
       hasInformationSharingSystemsWellStructured =
           organization.hasInformationSharingSystemsWellStructured;
@@ -543,6 +545,18 @@ class _FormState extends State<OrganizationEditForm> {
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
                         title: const Text(
+                            'Will there be disciplined teams?'),
+                        value: hasDisciplinedTeams,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            hasDisciplinedTeams = value!;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
                             'Will there be trust between the teams?'),
                         value: hasTrustBetweenTeams,
                         onChanged: (bool? value) {
@@ -649,6 +663,7 @@ class _FormState extends State<OrganizationEditForm> {
                         hasShareCommonVision: hasShareCommonVision,
                         hasPeopleInvolvementAdoption:
                             hasPeopleInvolvementAdoption,
+                        hasDisciplinedTeams: hasDisciplinedTeams,
                         hasTrustBetweenTeams: hasTrustBetweenTeams,
                         hasInformationSharingSystemsWellStructured:
                             hasInformationSharingSystemsWellStructured,
