@@ -352,7 +352,11 @@ class _FormState extends State<RunSimulationForm> {
       return "Spotify Model";
     }
 
-    return "DAD";
+    if((dad == max) && (dad == scrumAtScale)) {
+      return "DAD";
+    }
+
+    return "Scrum-at-Scale";
   }
 
   @override
