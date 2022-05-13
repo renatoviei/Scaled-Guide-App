@@ -11,7 +11,7 @@ Foram implementados os seguintes tópicos:
 * Desenvolvimento de operações de gerenciamento de organizações dentro do app (Cadastro, leitura, atualização e remoção de organizações do sistema);
 * Criação de listas, componentes, rotas, regras de negócio em Flutter (Dart) utilizando o Android Studio.
 * Toda documentação com informações adicionais do projeto, logos, telas, fluxo de telas e as widget trees encontram-se na pasta 'Docs'.
-* Link para simulação do protótipo app no Marvel App: https://marvelapp.com/prototype/2e6b2166/screen/85966428
+* Link para simulação do protótipo do app no Marvel App: https://marvelapp.com/prototype/2e6b2166/screen/85966428
 
 <h2>Para executar o projeto Flutter</h2>
 
