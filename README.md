@@ -1,7 +1,7 @@
 # Scaled-Guide-App
 <h2>Aplicativo para orientar a escolha do framework ágil a ser escalonado e/ou adaptado nas organizações usando Flutter e Firebase</h2>
  
-Dada a realidade dos desafios e fatores de sucesso existentes na adoção e adaptação de métodos ágeis em larga escala presentes no artigo “Comparing Methods for Large-Scale Agile Software Development: A Systematic Literature Review”, foi desenvolvido um aplicativo em Flutter para orientar a escolha do framework ágil em escala a ser adotado pelas organizações cadastradas no app. O algoritmo de decisão funcionará a partir de entradas de determinadas informações necessárias a respeito das "metas ágeis" de tais organizações e partes interessadas, ajudando-os em sua tomada de decisão sobre qual framework será melhor para o alcance de suas metas.
+Dadas as evidências encontradas na literatura sobre a realidade dos desafios e fatores de sucesso existentes na adoção e adaptação de métodos ágeis em larga escala, presentes no artigo “Comparing Methods for Large-Scale Agile Software Development: A Systematic Literature Review”, foi desenvolvido um aplicativo em Flutter para orientar a escolha do framework ágil em escala a ser adotado pelas organizações cadastradas no app. O algoritmo de decisão da simulação funcionará a partir de entradas de determinadas informações necessárias a respeito das "metas ágeis" de tais organizações e partes interessadas, ajudando-os em sua tomada de decisão sobre qual framework será melhor para o alcance de suas metas.
   
 Foram implementados os seguintes tópicos:
 
@@ -18,3 +18,10 @@ Foram implementados os seguintes tópicos:
 ```
 flutter run lib/main.dart
 ```
+
+<h2>Política de Privacidade</h2>
+
+A princípio esse aplicativo em versão beta possui apenas a finalidade de servir como resultado de um trabalho realizado para disciplina de desenvolvimento
+orientado a pesquisa científica do curso de mestrado em Informática Aplicada da Universidade Federal Rural de Pernambuco. Portanto, os dados fornecidos no 
+aplicativo e salvos no Firebase - Firestore, que podem inclusive ser fictícios, serão usados apenas com a finalidade do funcionamento primário proposto pelo 
+aplicativo.
