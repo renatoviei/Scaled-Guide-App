@@ -12,6 +12,7 @@ Foram implementados os seguintes tópicos:
 * Criação de listas, componentes, rotas, regras de negócio em Flutter (Dart) utilizando o Android Studio.
 * Toda documentação com informações adicionais do projeto, logos, telas, fluxo de telas e as widget trees encontram-se na pasta 'Docs'.
 * Link para simulação do protótipo do app no Marvel App: https://marvelapp.com/prototype/2e6b2166/screen/85966428
+* Link para app na Play Store: https://play.google.com/store/apps/details?id=com.ppgia.ScaledGuideApp
 
 <h2>Para executar o projeto Flutter</h2>
 
