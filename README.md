@@ -14,6 +14,8 @@ Foram implementados os seguintes tópicos:
 * Link para simulação do protótipo do app no Marvel App: https://marvelapp.com/prototype/2e6b2166/screen/85966428
 * Link para app na Play Store: https://play.google.com/store/apps/details?id=com.ppgia.ScaledGuideApp
 * Link para o vídeo de apresentação da pesquisa relacionada e demonstração do app: https://drive.google.com/file/d/1-e69_xYlqC7t5O4ZLWFbiK35yAn2is1j/view?usp=sharing
+* Link para o vídeo de Pitch do app: https://drive.google.com/file/d/13AS84A9LmRSeBy4Gbt_CLnOG8jv-pmVi/view?usp=sharing
+* Link para o slide de apresentação do Pitch: https://drive.google.com/file/d/1AcTheGxHx-GE3DERNkINHNa7KGLREp4i/view?usp=sharing
 
 <h2>Para executar o projeto Flutter</h2>
 
